@@ -116,7 +116,8 @@ namespace ORUtils {
 
 		// scalar divide assign
 		_CPU_AND_GPU_CODE_ friend Vector2<T> &operator /= (Vector2<T> &lhs, T d) {
-			if (d == 0) return lhs; lhs.x /= d; lhs.y /= d; return lhs;
+			if (d == 0) return lhs; 
+      lhs.x /= d; lhs.y /= d; return lhs;
 		}
 
 		// component-wise vector divide assign
@@ -711,37 +712,44 @@ namespace ORUtils {
 
 		// scalar multiply assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator *= (VectorX<T, s> &lhs, T d) {
-			for (int i = 0; i < s; i++) lhs[i] *= d; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] *= d; }
+      return lhs;
 		}
 
 		// component-wise vector multiply assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator *= (VectorX<T, s> &lhs, const VectorX<T, s> &rhs) {
-			for (int i = 0; i < s; i++) lhs[i] *= rhs[i]; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] *= rhs[i]; }
+      return lhs;
 		}
 
 		// scalar divide assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator /= (VectorX<T, s> &lhs, T d){
-			for (int i = 0; i < s; i++) lhs[i] /= d; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] /= d; }
+      return lhs;
 		}
 
 		// component-wise vector divide assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator /= (VectorX<T, s> &lhs, const VectorX<T, s> &rhs) {
-			for (int i = 0; i < s; i++) lhs[i] /= rhs[i]; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] /= rhs[i]; }
+      return lhs;
 		}
 
 		// component-wise vector add assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator += (VectorX<T, s> &lhs, const VectorX<T, s> &rhs)	{
-			for (int i = 0; i < s; i++) lhs[i] += rhs[i]; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] += rhs[i]; }
+      return lhs;
 		}
 
 		// component-wise vector subtract assign
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> &operator -= (VectorX<T, s> &lhs, const VectorX<T, s> &rhs)	{
-			for (int i = 0; i < s; i++) lhs[i] -= rhs[i]; return lhs;
+			for (int i = 0; i < s; i++) { lhs[i] -= rhs[i]; } 
+      return lhs;
 		}
 
 		// unary negate
 		_CPU_AND_GPU_CODE_ friend VectorX<T, s> operator - (const VectorX<T, s> &rhs)	{
-			VectorX<T, s> rv; for (int i = 0; i < s; i++) rv[i] = -rhs[i]; return rv;
+			VectorX<T, s> rv; for (int i = 0; i < s; i++) { rv[i] = -rhs[i]; }
+      return rv;
 		}
 
 		// vector add

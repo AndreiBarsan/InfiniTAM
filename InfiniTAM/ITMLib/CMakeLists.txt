@@ -219,8 +219,9 @@ if(WITH_CUDA)
     ${CUDA_NVCC_FLAGS}; -std=c++11)
   # This seems to fix some bugs which appear when attempting to build on
   # certain systems. Unclear whether there's a performance hit.
-  # TODO(andrei): It's likely just a temp fix.
-  # SET(CUDA_PROPAGATE_HOST_FLAGS OFF)
+  # TODO(andrei): It's likely just a temp fix. Update 2020-05-01: This fixed CUDA 10 build issues regarding
+  # "redefinition of argument std"
+  SET(CUDA_PROPAGATE_HOST_FLAGS OFF)
   include_directories(${CUDA_INCLUDE_DIRS})
   cuda_add_library(ITMLib
 	${ITMLIB_CPU_OBJECTS}
